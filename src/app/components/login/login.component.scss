@@ -34,14 +34,14 @@
 
 .form-input button{
     width: 40%;
-    margin: 5px 0 25px;
+    margin: 5px 0 10px;
 }
 
 .btn-success{
     background-color: #1c6288;
     font-size: 19px;
     border-radius: 2px;
-    border: 1px solid #daf1ff;
+    border: 0px solid #daf1ff;
 }
 
 .btn-success:hover{
@@ -50,11 +50,16 @@
 }
 
 .forgot{
-    padding: 0px 0 20px;
+    margin: 0px 0px 0px 0px;
 }
 
 .forgot a{
     color: #daf1ff;
+}
+
+.crearCuenta{
+    color: #daf1ff;
+    margin: 5px 0px 0px 0px;
 }
 
 h3{
