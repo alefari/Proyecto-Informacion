@@ -1,15 +1,14 @@
     <nav class="navbar fixed-top navbar-expand-sm navbar-dark">
-      <a href="./Dashboard" class="navbar-brand">uMakeIt!</a>
+      <a routerLink="/Dashboard" class="navbar-brand">uMakeIt!</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 <!-- BOTONES -->
         <div class="navbar-nav mr-auto">
-          <a href="./Dashboard" class=" nav-item nav-link">Inicio<span class="sr-only">(current)</span></a>
-          <a href="./Login" class="nav-item nav-link">Carrito</a>
-          <a href="./Login" class="nav-item nav-link">Login</a>
+          <a routerLink="/Dashboard" class=" nav-item nav-link">Inicio<span class="sr-only">(current)</span></a>
+          <a routerLink="/Carrito" class="nav-item nav-link">Carrito</a>
+          <a href="#" class="nav-item nav-link" (click)="cerrarSesion()">Logout</a>
           <!-- <a href="#" class="nav-item nav-link disabled">Desactivado</a> -->
         </div>
 <!-- BUSCAR -->
@@ -22,15 +21,15 @@
           </div>
         </form>
 <!-- PERFIL DROPDOWN -->
-        <div class="dropdown">
-          <a href="#" class="nav-link dropdown-toggle" id="NavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Cuenta
+        <div class="dropdown" role="presentation">
+          <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Perfil <span class="caret"></span>
           </a>
-          <ul class="dropdown-menu">
-              <li><a href="#">item 1</a></li>
-              <li><a href="#">item 2</a></li>
-              <li><a href="#">item 3</a></li>
-            </ul>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">item 1</a>
+              <a class="dropdown-item" href="#">item 2</a>
+              <a class="dropdown-item" href="#">item 3</a>
+          </div>
         </div>
       </div>
     </nav>

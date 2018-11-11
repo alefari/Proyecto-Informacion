@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-
-
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 import { from } from 'rxjs';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +11,9 @@ import { from } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ProyectoInfo';
+
+  Platos: Observable<any[]>;
+  constructor(db: AngularFirestore) {
+    this.Platos = db.collection('Platos').valueChanges();
+  }
 }
