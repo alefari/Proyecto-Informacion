@@ -14,7 +14,6 @@ export class AppComponent {
 
   Platos: Observable<any[]>;
   constructor(db: AngularFirestore) {
-  this.Platos = db.collection('Platos').valueChanges();
-
-}
+    this.Platos = db.collection('Platos').valueChanges();
+  }
 }

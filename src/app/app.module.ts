@@ -13,6 +13,10 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { ConexionService } from './services/conexion.service';
+import { DashAdminComponent } from './components/dash-admin/dash-admin.component';
+import { AgregarPlatoComponent } from './components/agregar-plato/agregar-plato.component';
+import { AuthService } from './services/auth.service';
+
 
 const router: Routes = [
   {
@@ -23,6 +27,11 @@ const router: Routes = [
   {
     path: 'Login',
     component: LoginComponent
+  },
+
+  {
+    path: 'DashAdmin',
+    component: DashAdminComponent
   },
 
   {
@@ -39,6 +48,8 @@ const router: Routes = [
     LoginComponent,
     DashboardComponent,
     TarjetaComponent,
+    DashAdminComponent,
+    AgregarPlatoComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +60,7 @@ const router: Routes = [
     AngularFireStorageModule,
     FormsModule
   ],
-  providers: [ConexionService],
+  providers: [ConexionService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

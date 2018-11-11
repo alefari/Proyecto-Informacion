@@ -6,7 +6,7 @@
 
 .modal-content{
     background-color: #434e5a;
-    opacity: .8;
+    //opacity: .8;
     padding: 0 18px;
     border-radius: 5px;
 }
@@ -37,31 +37,11 @@
     margin: 5px 0 10px;
 }
 
-.btn-success{
-    background-color: #1c6288;
-    font-size: 19px;
-    border-radius: 2px;
-    border: 0px solid #daf1ff;
-}
-
-.btn-success:hover{
-    background-color: #13445e;
-    border: 1px solid #daf1ff;
-}
-
-.forgot{
-    margin: 0px 0px 0px 0px;
-}
-
-.forgot a{
-    color: #daf1ff;
-}
-
-.crearCuenta{
-    color: #daf1ff;
-    margin: 5px 0px 0px 0px;
-}
-
 h3{
     color: white;
+}
+
+.btn-google{
+    background: #dd4b39;
+    color: #fff;
 }

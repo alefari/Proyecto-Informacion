@@ -2,22 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { ConexionService } from 'src/app/services/conexion.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-dash-admin',
+  templateUrl: './dash-admin.component.html',
+  styleUrls: ['./dash-admin.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashAdminComponent implements OnInit {
 
   items: any;
 
   constructor(private conexion: ConexionService) {
     this.conexion.listaItem().subscribe(item => {
       this.items = item;
-       console.log(this.items);
     });
   }
 
   ngOnInit() {
+  }
+
+  agregar() {
+    this.conexion.agregarItem(this.items);
+    this.items.nombre = '';
   }
 
 }
