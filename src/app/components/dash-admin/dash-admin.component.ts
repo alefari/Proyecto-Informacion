@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ConexionService } from 'src/app/services/conexion.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { PlatoInterface } from '../../models/Plato';
+import { PlatoService } from '../../services/plato.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-dash-admin',
@@ -7,21 +10,54 @@ import { ConexionService } from 'src/app/services/conexion.service';
   styleUrls: ['./dash-admin.component.scss']
 })
 export class DashAdminComponent implements OnInit {
+  platos: PlatoInterface[];
 
-  items: any;
+  idPlato: string;
+  idUsuarioLogueado: string;
 
-  constructor(private conexion: ConexionService) {
-    this.conexion.listaItem().subscribe(item => {
-      this.items = item;
+  plato: PlatoInterface = {
+    id: '',
+    nombre: '',
+    descripcion: '',
+    precio: ''
+  };
+
+  constructor(
+    private platoService: PlatoService,
+    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.todosPlatos();
+  }
+
+  todosPlatos() {
+    this.platoService.getAllPlatos().subscribe(platos => this.platos = platos);
+  }
+
+  // Comprueba si el usuario esta logueado y devuelve el user
+  onComprobarUserLogin() {
+    this.authService.getAuth().subscribe(user => {
+      if (user) {
+        this.idUsuarioLogueado = user.uid;
+      }
     });
   }
 
-  ngOnInit() {
+  getDetallesPlato() {
+    this.idPlato = this.route.snapshot.params['id'];
+    this.platoService.getOnePlato(this.idPlato).subscribe(plato => {
+      this.plato = plato;
+      // if(this.idUsuarioLogueado == this.plato.id)
+    });
   }
 
-  agregar() {
-    this.conexion.agregarItem(this.items);
-    this.items.nombre = '';
+  onClickDelete() {
+    if (confirm('Estas seguro?')) {
+      this.platoService.deletePlato(this.plato);
+    }
   }
 
 }

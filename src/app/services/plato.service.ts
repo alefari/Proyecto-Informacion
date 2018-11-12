@@ -13,7 +13,7 @@ export class PlatoService {
   plato: Observable<PlatoInterface>;
   constructor(
     private afs: AngularFirestore) {
-      this.platoCollection = this.afs.collection('platos', ref => ref);
+      this.platoCollection = this.afs.collection('Platos', ref => ref);
      }
 
     addNewPlato(plato: PlatoInterface) {

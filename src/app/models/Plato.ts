@@ -3,5 +3,5 @@ export interface PlatoInterface {
     nombre?: string;
     descripcion?: string;
     foto?: string;
-    precio?: number;
+    precio?: string;
 }
