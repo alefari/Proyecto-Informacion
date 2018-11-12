@@ -1,12 +1,36 @@
-
-<div class="container">
-<form (ngSubmit)="agregar()">
-  <input
-    type="text" placeholder="Ingrese Nombre"
-    nombre="nombre" class="form-control"
-    [(ngModel)] = "item.nombre"
-    >
-
-  <button class="btn btn-warning mt-3" type="submit">Agregar</button>
-</form>
+<div class="row">
+  <div class="col-md-6">
+    <a href="" class="btn btn-link">
+      <i class="fa fa-arrow-circle-left"></i>Atras
+    </a>
+  </div>
+  <div class="col-md-6"></div>
+</div>
+<div class="row">
+  <div class="col-md-10 mx-auto mt-2">
+    <div class="card">
+      <div class="card-header">Nuevo Plato</div>
+      <div class="card-body">
+        <form action="">
+          <div class="form-group">
+            <label for="">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+          </div>
+          <div class="form-group">
+            <label for="">Ingredientes</label>
+            <textarea type="text" class="form-control" id="ingredientes" name="ingredientes"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="">Precio</label>
+            <input type="text" class="form-control" id="precio" name="precio">
+          </div>
+          <div class="form-group">
+            <label for="">Titulo</label>
+            <input type="text" class="form-control" id="titulo" name="titulo">
+          </div>
+          <input type="submit" value="Guardar" class="btn btn-primary btn-block">
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
