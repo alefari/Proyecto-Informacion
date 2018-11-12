@@ -14,6 +14,7 @@ import { BarraComponent } from './components/barra/barra.component';
 import { LoginComponent } from './components/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { PlatoService } from './services/plato.service';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
@@ -21,12 +22,13 @@ import { AuthGuard } from '../app/guards/auth.guard';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-  {path: 'Dashboard', component: DashboardComponent},
-  {path: 'Login', component: LoginComponent},
   {path: 'DashAdmin', component: DashAdminComponent, canActivate: [AuthGuard]},
+  {path: 'AgregarPlato', component: AgregarPlatoComponent},
+  {path: 'Dashboard', component: DashboardComponent},
   {path: 'Carrito', component: CarritoComponent},
-  {path: '', component: LoginComponent},
-  {path: '**', component: NotFoundComponent}
+  {path: 'Login', component: LoginComponent},
+  {path: '**', component: NotFoundComponent},
+  {path: '', component: LoginComponent}
 ];
 
 @NgModule({
@@ -39,7 +41,8 @@ const routes: Routes = [
     DashAdminComponent,
     AgregarPlatoComponent,
     NotFoundComponent,
-    CarritoComponent
+    CarritoComponent,
+    AgregarPlatoComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,7 @@ const routes: Routes = [
     FormsModule
   ],
   exports: [RouterModule],
-  providers: [ConexionService, AuthService, AuthGuard],
+  providers: [ConexionService, AuthService, AuthGuard, PlatoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
