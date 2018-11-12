@@ -14,6 +14,7 @@ import { BarraComponent } from './components/barra/barra.component';
 import { LoginComponent } from './components/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { PlatoService } from './services/plato.service';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
@@ -22,13 +23,19 @@ import { NgModule } from '@angular/core';
 import { PaypalComponent } from './components/paypal/paypal.component';
 
 const routes: Routes = [
-  {path: 'Dashboard', component: DashboardComponent},
-  {path: 'Login', component: LoginComponent},
   {path: 'DashAdmin', component: DashAdminComponent, canActivate: [AuthGuard]},
+  {path: 'AgregarPlato', component: AgregarPlatoComponent},
+  {path: 'Dashboard', component: DashboardComponent},
   {path: 'Carrito', component: CarritoComponent},
+<<<<<<< HEAD
   {path: '', component: LoginComponent},
   {path: '**', component: NotFoundComponent},
   {path: 'Paypal', component: PaypalComponent}
+=======
+  {path: 'Login', component: LoginComponent},
+  {path: '**', component: NotFoundComponent},
+  {path: '', component: LoginComponent}
+>>>>>>> 265d8ad9e01d4eadd4e12141218c2768d98287a2
 ];
 
 @NgModule({
@@ -42,7 +49,11 @@ const routes: Routes = [
     AgregarPlatoComponent,
     NotFoundComponent,
     CarritoComponent,
+<<<<<<< HEAD
     PaypalComponent
+=======
+    AgregarPlatoComponent
+>>>>>>> 265d8ad9e01d4eadd4e12141218c2768d98287a2
   ],
   imports: [
     BrowserModule,
@@ -54,7 +65,7 @@ const routes: Routes = [
     FormsModule
   ],
   exports: [RouterModule],
-  providers: [ConexionService, AuthService, AuthGuard],
+  providers: [ConexionService, AuthService, AuthGuard, PlatoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

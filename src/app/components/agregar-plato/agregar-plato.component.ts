@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PlatoInterface } from '../../models/Plato';
+import { AuthService } from '../../services/auth.service';
+import { PlatoService } from '../../services/plato.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-plato',
@@ -6,10 +10,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agregar-plato.component.scss']
 })
 export class AgregarPlatoComponent implements OnInit {
+  plato: PlatoInterface = {
+    id: '',
+    nombre: '',
+    descripcion: '',
+    precio: ''
+  };
 
-  constructor() { }
+
+  constructor(
+    private authService: AuthService,
+    private platoService: PlatoService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
+  onGuardarReceta({value}: {value: PlatoInterface}) {
+    console.log(value);
+    this.platoService.addNewPlato(value);
+    this.router.navigate(['/DashAdmin']);
+  }
+
 
 }
