@@ -27,15 +27,12 @@ const routes: Routes = [
   {path: 'AgregarPlato', component: AgregarPlatoComponent},
   {path: 'Dashboard', component: DashboardComponent},
   {path: 'Carrito', component: CarritoComponent},
-<<<<<<< HEAD
   {path: '', component: LoginComponent},
   {path: '**', component: NotFoundComponent},
-  {path: 'Paypal', component: PaypalComponent}
-=======
+  {path: 'Paypal', component: PaypalComponent},
   {path: 'Login', component: LoginComponent},
   {path: '**', component: NotFoundComponent},
   {path: '', component: LoginComponent}
->>>>>>> 265d8ad9e01d4eadd4e12141218c2768d98287a2
 ];
 
 @NgModule({
@@ -49,11 +46,8 @@ const routes: Routes = [
     AgregarPlatoComponent,
     NotFoundComponent,
     CarritoComponent,
-<<<<<<< HEAD
-    PaypalComponent
-=======
-    AgregarPlatoComponent
->>>>>>> 265d8ad9e01d4eadd4e12141218c2768d98287a2
+    PaypalComponent,
+    AgregarPlatoComponent,
   ],
   imports: [
     BrowserModule,
