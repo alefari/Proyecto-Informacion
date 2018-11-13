@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <div class="card">
+    <img src="{{plato.foto}}"  class="card-img-top bgdark">
+    <div class="card-body">
+        <h5 class="card-title">{{ plato.nombre }}</h5>
+        <p card-text>{{ plato.descripcion }}</p>
+        <p card-text>Precio: {{ plato.precio }}</p>
+        <div class="text-center">
+            <a href="/DashAdmin" class="btn btn-danger" (click)="onClickDelete()">Eliminar</a>
+        </div>
+    </div>
+    </div>
+</div>

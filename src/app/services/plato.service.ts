@@ -33,7 +33,7 @@ export class PlatoService {
     }
 
     getOnePlato(idPlato: string) {
-      this.platoDoc = this.afs.doc<PlatoInterface>(`platos/${idPlato}`);
+      this.platoDoc = this.afs.doc<PlatoInterface>(`Platos/${idPlato}`);
       this.plato = this.platoDoc.snapshotChanges().map(action => {
         if (action.payload.exists === false) {
           return null;
@@ -47,13 +47,14 @@ export class PlatoService {
     }
 
     updatePlato(plato: PlatoInterface) {
-      this.platoDoc = this.afs.doc(`platos/${plato.id}`);
+      this.platoDoc = this.afs.doc(`Platos/${plato.id}`);
       this.platoDoc.update(plato);
     }
 
     deletePlato(plato: PlatoInterface) {
-      this.platoDoc = this.afs.doc(`platos/${plato.id}`);
+      this.platoDoc = this.afs.doc(`Platos/${plato.id}`);
       this.platoDoc.delete();
+      console.log('plato eliminado');
     }
 
 }

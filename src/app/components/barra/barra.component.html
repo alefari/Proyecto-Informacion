@@ -20,8 +20,12 @@
             <input type="text" class="form-control" placeholder="¿Qué desea buscar?" aria-label="Buscar" aria-describedby="basic-addon1">
           </div>
         </form>
+        <div class="navbar-nav mr-auto">
+          <a routerLink="**" class=" nav-item nav-link">Usuario<span class="sr-only">(current)</span></a>
+          <a href="#" class="nav-item nav-link" (click)="cerrarSesion()">Logout</a>
+        </div>
 <!-- PERFIL DROPDOWN -->
-        <div class="dropdown" role="presentation">
+        <!-- <div class="dropdown" role="presentation">
           <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Perfil <span class="caret"></span>
           </a>
@@ -30,6 +34,6 @@
               <a class="dropdown-item" href="#">item 2</a>
               <a class="dropdown-item" href="#">item 3</a>
           </div>
-        </div>
+        </div> -->
       </div>
     </nav>
