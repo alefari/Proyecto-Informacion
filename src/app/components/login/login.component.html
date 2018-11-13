@@ -9,15 +9,17 @@
         <img src="/src/assets/imagenes/download.png" alt="">
       </div>
       <div class="col-12 form-input">
-        <form>
+        <div class="form-group">
+          <h3>Iniciar Sesión</h3>
+        </div>
+        <form (submit)="onSubmitLogin()">
           <div class="form-group">
-            <h3>Iniciar Sesión</h3>
+              <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="Ingresa email">
           </div>
           <div class="form-group">
-            <input type="email" id="email" class="form-control" placeholder="Ingresa email">
-          </div>
-          <div class="form-group">
-            <input type="password" id="password" class="form-control" placeholder="Ingresa contraseña">
+              <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Ingresa contraseña">
           </div>
           <input type="text" value="Ingresar" class="btn btn-primary btn-block btn-lg">
           <!-- <button type="submit" class="btn btn-success btn-lg" (click)="entrar = true">Ingresar</button> -->
@@ -25,8 +27,7 @@
         </form>
       </div>
       <div class="col-12 crearCuenta mt-2 mb-4">
-          <button type="submit" class="btn btn-success btn-lg" href="/Registro">Registro</button>
-          <!-- <a href="/Registro">Crear Cuenta</a> -->
+          <input type="submit" value="Registro" class="btn btn-primary btn-block btn-lg" href="/Registro">       <!-- <a href="/Registro">Crear Cuenta</a> -->
       </div>
       <!-- <div class="col-12 forgot"> -->
         <!-- <a href="#">¿Olvidaste tu Contraseña?</a> -->

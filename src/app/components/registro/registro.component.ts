@@ -22,7 +22,7 @@ export class RegistroComponent implements OnInit {
   onSubmitAddUser() {
     this.authService.registerUser(this.email, this.password)
     .then( (res) => {
-      console.log('BIEN');
+      console.log('Usuario Agregado');
       this.router.navigate(['/Dashboard']);
     }).catch( (err) => {
       console.log(err);
