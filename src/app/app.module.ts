@@ -21,18 +21,20 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from '../app/guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { PaypalComponent } from './components/paypal/paypal.component';
+import { DetallesComponent } from './components/detalles/detalles.component';
+import { EditarComponent } from './components/editar/editar.component';
 
 const routes: Routes = [
+  {path: 'Login', component: LoginComponent},
   {path: 'DashAdmin', component: DashAdminComponent, canActivate: [AuthGuard]},
   {path: 'AgregarPlato', component: AgregarPlatoComponent},
   {path: 'Dashboard', component: DashboardComponent},
   {path: 'Carrito', component: CarritoComponent},
-  {path: '', component: LoginComponent},
-  {path: '**', component: NotFoundComponent},
+  {path: 'Detalles/:id', component: DetallesComponent},
   {path: 'Paypal', component: PaypalComponent},
-  {path: 'Login', component: LoginComponent},
-  {path: '**', component: NotFoundComponent},
-  {path: '', component: LoginComponent}
+  {path: 'Editar/:id', component: EditarComponent},
+  {path: '', component: LoginComponent},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
@@ -48,6 +50,8 @@ const routes: Routes = [
     CarritoComponent,
     PaypalComponent,
     AgregarPlatoComponent,
+    DetallesComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,
