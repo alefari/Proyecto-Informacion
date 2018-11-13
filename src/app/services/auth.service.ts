@@ -12,6 +12,23 @@ export class AuthService {
     public afAuth: AngularFireAuth
   ) { }
 
+  registerUser(email: string, password: string) {
+    return new Promise((resolve, reject) => {
+      this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then(userData => resolve(userData),
+      err => reject (err));
+    });
+  }
+
+  loginEmail(email: string, password: string) {
+    return new Promise((resolve, reject) => {
+      this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then( userData => resolve(userData),
+      err => reject(err));
+    });
+  }
+
+
   loginGoogle() {
     return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
