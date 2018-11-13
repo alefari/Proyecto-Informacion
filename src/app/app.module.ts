@@ -9,7 +9,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AngularFireModule } from 'angularfire2';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
-import { ConexionService } from './services/conexion.service';
 import { BarraComponent } from './components/barra/barra.component';
 import { LoginComponent } from './components/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -66,7 +65,7 @@ const routes: Routes = [
     FormsModule
   ],
   exports: [RouterModule],
-  providers: [ConexionService, AuthService, AuthGuard, PlatoService],
+  providers: [AuthService, AuthGuard, PlatoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
