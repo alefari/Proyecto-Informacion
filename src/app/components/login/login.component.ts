@@ -12,13 +12,28 @@ import { Router } from '@angular/router';
 
 
 export class LoginComponent implements OnInit {
+  public email: string;
+  public password: string;
 
   constructor(
-    private authService: AuthService,
-    private router: Router
+    public authService: AuthService,
+    public router: Router
     ) { }
 
   ngOnInit() {
+  }
+
+  onSubmitLogin() {
+    this.authService.loginEmail(this.email, this.password)
+    .then( (res) => {
+      if (this.email === 'admin@pizza.com') {
+        this.router.navigate(['/DashAdmin']);
+      } else {
+        this.router.navigate(['/Dashboard']);
+      }
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
   onClickGoogleLogin() {
