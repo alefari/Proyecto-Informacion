@@ -21,14 +21,16 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from '../app/guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { PaypalComponent } from './components/paypal/paypal.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 const routes: Routes = [
-  {path: 'DashAdmin', component: DashAdminComponent, canActivate: [AuthGuard]},
+  {path: 'DashAdmin', component: DashAdminComponent},
   {path: 'AgregarPlato', component: AgregarPlatoComponent},
   {path: 'Dashboard', component: DashboardComponent},
   {path: 'Carrito', component: CarritoComponent},
   {path: 'Login', component: LoginComponent},
   {path: 'Paypal', component: PaypalComponent},
+  {path: 'Registro', component: RegistroComponent},
   {path: '', component: LoginComponent},
   {path: '**', component: NotFoundComponent}
 ];
@@ -45,7 +47,8 @@ const routes: Routes = [
     NotFoundComponent,
     CarritoComponent,
     PaypalComponent,
-    AgregarPlatoComponent
+    AgregarPlatoComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
