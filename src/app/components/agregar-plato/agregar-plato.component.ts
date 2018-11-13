@@ -14,9 +14,10 @@ export class AgregarPlatoComponent implements OnInit {
     id: '',
     nombre: '',
     descripcion: '',
-    precio: ''
+    precio: 0
   };
 
+  selectedFile = null;
 
   constructor(
     private authService: AuthService,
@@ -30,6 +31,10 @@ export class AgregarPlatoComponent implements OnInit {
     console.log(value);
     this.platoService.addNewPlato(value);
     this.router.navigate(['/DashAdmin']);
+  }
+
+  onFileSelected(event) {
+    this.selectedFile = event.target.files[0];
   }
 
 

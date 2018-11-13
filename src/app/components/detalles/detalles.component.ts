@@ -19,7 +19,7 @@ export class DetallesComponent implements OnInit {
     id: '',
     nombre: '',
     descripcion: '',
-    precio: '',
+    precio: 0,
     foto: ''
   };
 

@@ -15,7 +15,7 @@ plato: PlatoInterface = {
   id: '',
   nombre: '',
   descripcion: '',
-  precio: ''
+  precio: 0
 };
 
   constructor(
