@@ -14,7 +14,7 @@ export class BarraComponent implements OnInit {
   public isLogin: string;
 
   constructor(
-    private authService: AuthService
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class BarraComponent implements OnInit {
     });
   }
 
-  cerrarSesion() {
+  onClickLogout() {
     this.authService.logout();
   }
 
